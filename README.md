@@ -10,7 +10,6 @@ Made with NodeJs FrameWork
 - Redirect with low latency
 - Custom alias support
 - Click analytics (optional)
-- Secure and scalable architecture
 
 ## Use Case
 
