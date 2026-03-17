@@ -1,21 +1,17 @@
 import rateLimit from 'express-rate-limit';
-import RedisStore from 'rate-limit-redis';
-import redisClient from '../redis.js';
 
-export const shortenLimiter = rateLimit({
-  windowMs: 60 * 1000, 
+export const createShortenLimiter = () => rateLimit({
+  windowMs: 60 * 1000, // 1 minute
   max: 10,
-  message: { success: false, error: 'Too many URL creations from this IP. Please try again after 1 minute.' },
-  store: new RedisStore({
-    sendCommand: (...args) => redisClient.sendCommand(args)
-  })
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, error: 'Too many URL creations from this IP. Please try again after 1 minute.' }
 });
 
-export const redirectLimiter = rateLimit({
-  windowMs: 60 * 1000,
+export const createRedirectLimiter = () => rateLimit({
+  windowMs: 60 * 1000, // 1 minute
   max: 100,
-  message: 'Too many redirects from this IP. Please wait a minute before clicking again.',
-  store: new RedisStore({
-    sendCommand: (...args) => redisClient.sendCommand(args)
-  })
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: 'Too many redirects from this IP. Please wait a minute.'
 });
