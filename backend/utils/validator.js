@@ -6,6 +6,7 @@ const RESERVED_WORDS = ["api", "admin", "login", "dashboard", "static", "stats",
  * Validates the long URL. 
  * Rejects localhost, 127.0.0.1, private IPs, javascript:, data: protocols.
  */
+
 export const isValidOriginalUrl = (url) => {
   if (!url || url.length > 2048) return false;
 
