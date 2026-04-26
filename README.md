@@ -1,6 +1,7 @@
 # 🔗 URL Shortener
 
-A full-stack, production-ready URL shortener built with **React + Vite** on the frontend and **Node.js + Express + MongoDB + Redis** on the backend, fully containerized with **Docker**.
+A full-stack, production-ready URL shortener built with **React + Vite** on the frontend and
+**Node.js + Express + MongoDB + Redis** on the backend, fully containerized with **Docker**.
 
 ---
 
