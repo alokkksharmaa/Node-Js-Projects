@@ -78,8 +78,9 @@ export const processRedirect = async (shortCode, reqInfo) => {
     }
     
     // Check Expiration
-    if (urlDoc.expiresAt && urlDoc.expiresAt < new Date()) {
-      throw new CustomError('This URL has expired', 410); // 410 Gone
+    if (urlDoc.expiresAt && urlDoc.expiresAt < new Date())
+    {
+      throw new CustomError('This URL has expired', 410); // 410 Gone 
     }
 
     // Sync click count up by 1 (background)
@@ -90,7 +91,6 @@ export const processRedirect = async (shortCode, reqInfo) => {
 
     // Async Analytics Logging 
     logClickAsync(shortCode, reqInfo);
-
     return urlDoc.originalUrl;
   } catch (err) {
     throw err;
