@@ -1,4 +1,6 @@
 import { createShortUrl, processRedirect, getUrlAnalytics, deleteShortUrl, updateShortUrl } from '../services/urlService.js';
+import express from 'express';
+
 
 export const handleShorten = async (req, res, next) => {
   try {
